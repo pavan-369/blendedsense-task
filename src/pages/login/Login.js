@@ -3,12 +3,12 @@ import { Modal, Button, Form, Input, Divider } from 'antd';
 import logo from '../images/blendedsenselogin.svg' ;
 import "antd/dist/antd.css";
 import { EyeFilled, EyeInvisibleFilled } from '@ant-design/icons';
-
 import img1 from '../images/blendedsense1.svg';
 import img2 from '../images/blendedsense2.svg';
 import img3 from '../images/blendedsense3.svg';
 import img4 from '../images/blendedsense4.svg'
 import Forgot from '../forgotPassword/Forgot';
+
 
 const Login = () => {
     const [isModalVisible, setIsModalVisible] = useState(false);
