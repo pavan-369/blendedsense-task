@@ -1,32 +1,53 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import {useDispatch , useSelector} from 'react-redux';
 import { Modal, Button, Form, Input, Divider } from 'antd';
 import logo from '../images/blendedsenselogin.svg' ;
 import "antd/dist/antd.css";
 import { EyeFilled, EyeInvisibleFilled } from '@ant-design/icons';
-
 import img1 from '../images/blendedsense1.svg';
 import img2 from '../images/blendedsense2.svg';
 import img3 from '../images/blendedsense3.svg';
 import img4 from '../images/blendedsense4.svg'
-import Forgot from '../forgotPassword/Forgot';
+import Forgot from './Forgot';
+import { login } from '../../redux/Actions/action';
+import './App1.css';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+
 
 const Login = () => {
+
+    let Navigate = useNavigate();
+    const data = useSelector(state => state.user)
     const [isModalVisible, setIsModalVisible] = useState(false);
     const showModal = () => {setIsModalVisible(true);};
-    
     const handleCancel = () => {setIsModalVisible(false);};
+    const dispatch = useDispatch();
 
   const [credentials, setCredentials] = useState({email:"", password:""})
+
   const changeHandler = e => {
     setCredentials({...credentials, [e.target.name] : e.target.value})
-}
+  }
+
+    async function submitHandler(e) {
+      console.log(credentials);
+      dispatch(login(credentials));
+      console.log("login",data);
+          if(data!== null){
+              Navigate("/dashboard");
+              console.log("login-data",data)
+          }
+        }
+
   return <div className={isModalVisible ? 'login1': "login"}>
       <img className='logo1' src={img1}></img>
       <img className='logo2' src={img2}></img>
       <img className='logo3' src={img3} ></img>
       <img className='logo4' src={img4} ></img>
       <Divider className='divider'/>
-      <Form layout="vertical" className="login-form">
+      <Form layout="vertical" className="login-form" onFinish={submitHandler}>
           <img src={logo} className="logoblendedsense"/>
           <p className='loginheading'>LOGIN</p>  
         <div className='form-input'>
@@ -60,7 +81,7 @@ const Login = () => {
             <div className="signup"><p>Need an accout?<a> Sign Up</a></p></div>
 
         </Form>
-
+        <ToastContainer autoClose={2000} />
         <Modal visible={isModalVisible} onCancel={handleCancel}
         className="forgot-form"
   title=""
