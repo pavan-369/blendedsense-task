@@ -44,23 +44,7 @@
 }
 
 
-/* .welcome1{
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.login{
-  background-image: linear-gradient(to bottom right, #FFCE00, #FE4880);
-  padding: 50px;
-  width: 300px;
-  border: 1px solid black;
-  border-radius: 25px;
-  z-index: 1;
-  position: relative;
-} */
 .welcome,.editdetails{
-  /* background-image: linear-gradient(to bottom right, #FFCE00, #FE4880); */
   background-color: white;
   padding: 30px;
   width: 50vh;
@@ -102,7 +86,6 @@ button{
 .site-page-header-ghost-wrapper {
   padding: 2vh;
   height: 10vh;
-  /* background-image: linear-gradient(to bottom right, #FFCE00, #FE4880); */
   background-color: white;
 }
 .address{

@@ -11,25 +11,19 @@ const reducer = (state = initialState, action) => {
         }
         case 'LOGIN_FAILED': {
             const newState = { ...state };
-            // console.log('login failed', payload.error);
-            // alert(payload.error);
             return newState;
         }
         case 'UPDATE_SUCCESS': {
             const newState = { ...state };
             newState.user = {...payload.user1};
-            // newState.token = payload.token1;
             return newState;
         }
         case 'UPDATE_FAILED': {
             const newState = { ...state };
-            // console.log('login failed', payload.error);
-            // alert(payload.error);
             return newState;
         }
         case 'LOGOUT':
-            const newState = {initialState}
-            return state= newState;
+            return state=initialState;
         
         default:
             const newState = { ...state };

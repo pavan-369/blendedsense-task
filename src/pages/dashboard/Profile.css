@@ -1,6 +1,4 @@
 .profile,.edit-profile{
-    /* width: 34%; */
-    /* height: 80vh; */
     background-color: white;
     padding: 20px;
     border-radius: 16px;
@@ -67,33 +65,6 @@
 .profile-instagram-url, .profile-facebook-url, .profile-slack-url{
     color: black;
 }
-/* .edit-input{
-    width: 100%;
-    border-radius: 4px;
-    border:1px solid  rgba(0, 0, 0, 0.35);
-    height: 40px;
-    padding-left: 10px;
-    font-size: 16px;
-    color: black;
-}
-.edit-input:active{
-    border:1px solid  rgba(0, 140, 255, 0.35) !important;
-}
-.firstNameForm,.lastNameForm{
-    text-align:left ;
-}
-.firstNameLabel,.lastNameLabel{
-    position: relative;
-    font-size: 12px;
-    top: 11px;
-    left: 10px;
-    padding: 0 5px !important;
-    z-index: 1;
-    background-color: white;
-    width: fit-content;
-    color: rgba(0, 0, 0, 0.65);
-} */
-
 /* profile-pic */
 .profile-pic{
     display: flex;
@@ -143,6 +114,9 @@
     width: 50%;
     text-align: center;
   }
+  .profile-name{
+      font-size: 18px;
+  }
 /* ha */
 .profile-ha{
     height: 86px;
@@ -163,9 +137,6 @@
     border-radius: 16px;
     font-size: 14px;
     box-shadow: 0 2px 4px 0 #c3c3c3, 0 2px 4px 0 #c3c3c3;
-}
-.profile-bio1{
-    display: none;
 }
 /* edit-profile */
 .profile-edit-cancel{

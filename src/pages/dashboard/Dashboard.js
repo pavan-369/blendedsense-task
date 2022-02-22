@@ -25,16 +25,8 @@ const { SubMenu } = Menu;
 
 
 const Dashboard =() => {
-  const data = useSelector(state => state.user)
 
-    // let Navigate = useNavigate();
-
-    // function submitHandler1(e) {
-    //     e.preventDefault();
-    //     Navigate("/dashboard/profile");
-    // }
     const onHandleCollapse = (collapsed)=> {
-      console.log(collapsed);
       setCollapsed(collapsed);
     };
     const [collapsed, setCollapsed] = useState(false)
@@ -42,15 +34,8 @@ const Dashboard =() => {
 
   return (
     <div>
-    {/* <div className="Dashboard">
-      
-        <div className="welcome">
-        <h3>welcome {useSelector(state => state.user.firstName)+" "+useSelector(state => state.user.lastName)} </h3>
-        <button className='button' onClick={submitHandler1}>Profile</button>
-        </div>
-    </div> */}
     <Layout 
-    style={{ minHeight: '100vh' }}
+    className='dashboard-layout'
     >
         <Sider 
         icon={<FileImageOutlined />}

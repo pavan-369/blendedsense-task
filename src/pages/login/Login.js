@@ -32,10 +32,8 @@ const Login = () => {
   }
 
     async function submitHandler(e) {
-      console.log(credentials);
       await dispatch(login(credentials));
           if(data!== null){
-            console.log("login-data",data);
             Navigate("/dashboard");   
           }
         }
@@ -76,8 +74,8 @@ const Login = () => {
                      onChange={changeHandler} 
                      value={credentials.password} /></Form.Item>     </div>   
             <Button className="login-button" type="primary" htmlType="submit">Login with Email</Button>
-            <div className="forgotten" onClick={showModal} ><a style={{color: "#2eb9d2"}}>Forgot Password?</a></div>
-            <div className="signup"><p>Need an accout?<a style={{color: "#2eb9d2"}}> Sign Up</a></p></div>
+            <div className="forgotten" onClick={showModal} ><a className='login-forgot' >Forgot Password?</a></div>
+            <div className="signup"><p>Need an accout?<a className='login-signup'> Sign Up</a></p></div>
 
         </Form>
         <ToastContainer autoClose={2000} />

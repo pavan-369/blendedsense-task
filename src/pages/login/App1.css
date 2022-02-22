@@ -74,6 +74,9 @@
   line-height: 24px;
   text-align: center;
 }
+.login-signup ,.login-forgot{
+  color: #2eb9d2;
+}
 .ant-input-password-icon{
   display: block !important;
  font-size: 25px;

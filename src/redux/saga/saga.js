@@ -20,7 +20,6 @@ function* login({type, payload}) {
     } catch (error) {
         console.log(error.response.data.message );
       yield put({type: 'LOGIN_FAILED', payload: { error: error.response.data.message }});
-      // toast.warning(error.response.data.message);
       notification.error({
         message: error.response.data.message,
         className: "notification-failure",
@@ -52,7 +51,6 @@ export function* loginSaga() {
     } catch (error) {
         console.log(error.response.data.message );
       yield put({type: 'UPDATE_FAILED', payload: { error: error.response.data.message }});
-      // toast.warning(error.response.data.message);
       notification.error({
         message: error.response.data.message,
         className: "notification-failure",

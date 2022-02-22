@@ -5,7 +5,7 @@ import { Footer } from 'antd/lib/layout/layout';
 const Content = () => {
   const { Column} = Table;
 
-    const [credentials, setCredentials] = useState({currentPassword:"pavan", newPassword:""})
+    const [credentials, setCredentials] = useState({currentPassword:"", newPassword:""})
 
     const changeHandler = e => {
         setCredentials({...credentials, [e.target.name] : e.target.value})

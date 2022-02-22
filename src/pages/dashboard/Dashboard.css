@@ -1,6 +1,9 @@
 .sider-menu{
     background-color: transparent;
 }
+.dashboard-layout{
+    min-height: 100vh;
+}
 .sider-logo{
     margin-bottom: 25px;
 }
@@ -90,23 +93,11 @@ h2{
 
 .content-passowrd-input{
     border-radius: 4px !important;
-    /* background-color: transparent; */
 }
-/* .ant-input{
-    background-color: transparent;
-} */
+
 .ant-form-item-label{
     padding-bottom: 3px !important; 
-    /* top: 13px;
-    left: 5px;
-    padding: 0 5px !important;
-    z-index: 1; */
 
-    /* position: absolute;
-    left: 400px;
-    top: 295px;
-    padding: 0 5px;
-    transition: all 0.3s; */
 }
 .content-button{
     background-color: #00b0d1;
@@ -128,11 +119,7 @@ h2{
     height: 56px !important;
     padding-top: 0px !important;
     padding-bottom: 0px !important;
-    /* border-bottom: 1px solid rgb(145, 144, 144) !important; */
 }
-/* .ant-table-columnheader{
-    border-bottom: 1px solid rgb(145, 144, 144) !important;
-} */
 .ant-table-pagination-right{display: none;}
 p.nofication1,p.notication2{
     margin: 0px !important;

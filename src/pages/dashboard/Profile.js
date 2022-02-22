@@ -33,7 +33,8 @@ function Profile() {
     })
 
     const [style, setStyle] = useState("profile");
-    const [style1, setStyle1] = useState("profile1");
+    const [styleEdit, setStyleEdit] = useState("profile1");
+    const [stylebio, setStylebio] = useState("profile-bio");
 
     const changeHandler = e => {
         setEdits({...edits, [e.target.name] : e.target.value})
@@ -42,18 +43,23 @@ function Profile() {
     function submitHandler(e) {
         e.preventDefault();
         setStyle("profile1");
-        setStyle1("edit-profile")
+        setStyleEdit("edit-profile")
+        console.log(edits)
+    }
+    function submitBioHandler(e){
+        e.preventDefault();
+        setStylebio("profile1");
         console.log(edits)
     }
     function cancelHandler(e){
         e.preventDefault();
         setStyle("profile");
-        setStyle1("profile1")
+        setStyleEdit("profile1")
     }
     function updateHandler(e){
         dispatch(update({edits,token}));
         setStyle("profile");
-        setStyle1("profile1")
+        setStyleEdit("profile1")
     }
     
         return (
@@ -64,7 +70,6 @@ function Profile() {
             <div className='profile-edit'>
             <p className='profile-heading'>PROFILE</p><EditOutlined className='editprofile' onClick={submitHandler}/>
             </div>
-            {/* <img className='profile-pic' src={data.profilePic} alt='Profile Pic' title='Profile picture' width="96px" height="96px" /> */}
             <div className='profile-pic'>
             <div className="profilepic">
                   <img className="profilepic__image" src={data.profilePic} width="96px" height="96px" alt="Profibild" />
@@ -74,7 +79,7 @@ function Profile() {
                   </div>
                 </div>
                 </div>
-            <p style={{fontSize:18}}>{data.firstName+" "+data.lastName}</p>
+            <p className='profile-name'>{data.firstName+" "+data.lastName}</p>
             <p className='profile-contact'>Contact</p>
             <Divider className='profile-devider'/>
             <div className='profile-contact-data'>
@@ -97,7 +102,7 @@ function Profile() {
             </div>
             
 
-            <Form className={style1} 
+            <Form className={styleEdit} 
             layout="vertical"
             onFinish={updateHandler}
             initialValues={{
@@ -119,7 +124,6 @@ function Profile() {
                 <Button className="profile-edit-save" htmlType='submit' >Save</Button>
                 </div>
             </div>
-            {/* <img className='profile-pic' src={data.profilePic} alt='Profile Pic' title='Profile picture' width="96px" height="96px" /> */}
             <div className='profile-pic'>
             <div className="profilepic">
                   <img className="profilepic__image" src={data.profilePic} width="96px" height="96px" alt="Profibild" />
@@ -237,9 +241,7 @@ function Profile() {
             </Form.Item></Col></Row>
 
             </div>
-            {/* <p className='profile-segment'>Segment</p>
-            <Divider className='profile-devider'/>
-            <p className='profile-segment-data'>Technology</p> */}
+            
             <p className='profile-social'>Social</p>
             <Divider className='profile-devider'/>
             <div className='profile-social-data'>
@@ -293,14 +295,14 @@ function Profile() {
             </Col>
 
             <Col span={16}>
-            <div className='profile-bio'>
+            <div className={stylebio}>
             <div className='profile-edit'>
-            <p className='profile-heading'>BIO</p><EditOutlined className='editprofile' onClick={submitHandler}/>
+            <p className='profile-heading'>BIO</p><EditOutlined className='editprofile' onClick={submitBioHandler}/>
             </div>
                 <p className='profile-bio-subheading'>Write a little bit about yourself here for others to see.</p>
                 <p className='profile-bio-subheading'>{data.bio}</p>
-
             </div>
+
             <div className='profile-ha'>
                 <p className='profile-ha-heading'>HANDBOOKS & AGREEMENTS</p>
                 <p className='profile-ha-content'>You do not have any agreements at this time</p>
