@@ -16,7 +16,6 @@ const App=()=> {
         <Route element={<ProtectedRoutes1/>}>
           <Route path='/' element={<Welcome />}></Route>
         </Route>
-
         <Route element={<ProtectedRoutes/>}>
           <Route path='/dashboard' element={<Dashboard />}></Route>
           <Route path='/dashboard/profile' element={<Profile />}></Route>
