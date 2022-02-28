@@ -29,12 +29,12 @@ const Dashboard =() => {
   const token = localStorage.getItem("Token")
   let dispatch = useDispatch();
 // useEffect (()=>{
-  // if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
-  //   console.info( "This page is reloaded" );
-  //   dispatch(refresh(token));
-  // } else {
-  //   console.info( "This page is not reloaded");
-  // }
+  if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+    console.info( "This page is reloaded" );
+    dispatch(refresh(token));
+  } else {
+    console.info( "This page is not reloaded");
+  }
 // })   
 //   useEffect = () =>{
 //   if (data=null) {

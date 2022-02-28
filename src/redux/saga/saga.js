@@ -41,29 +41,29 @@ export function* loginSaga() {
     ]);
   }
 
-//  function* refresh({type, payload}) {
-//     try {
-//       const token2 = localStorage.getItem("Token")
-//       let { data: { user  } } = yield call(axios.get, 'https://stage.blendedsense.com/api/users/me', {headers : { Authorization: `Bearer ${token2}` }});
-//       let user2=user;
-//       yield put({type: 'REFRESH_SUCCESS', payload: { user2 , token2}});
+ function* refresh({type, payload}) {
+    try {
+      const token2 = localStorage.getItem("Token")
+      let { data: { user  } } = yield call(axios.get, 'https://stage.blendedsense.com/api/users/me', {headers : { Authorization: `Bearer ${token2}` }});
+      let user2=user;
+      yield put({type: 'REFRESH_SUCCESS', payload: { user2 , token2}});
 
-//     } catch (error) {
-//         console.log(error.response.data.message );
-//         notification.error({
-//         message: error.response.error.message,
-//         className: "notification-failure",
-//         duration: 0,
-//         closeIcon:<CloseCircleFilled className='icon-close'/>
-//       });
-//     }
-//   }
+    } catch (error) {
+        console.log(error.response.data.message );
+        notification.error({
+        message: error.response.error.message,
+        className: "notification-failure",
+        duration: 0,
+        closeIcon:<CloseCircleFilled className='icon-close'/>
+      });
+    }
+  }
 
-// export function* refreshSaga() {
-//     yield all([
-//       takeEvery('REFRESH', refresh)
-//     ]);
-//   }
+export function* refreshSaga() {
+    yield all([
+      takeEvery('REFRESH', refresh)
+    ]);
+  }
 
   function* update({type, payload}) {
     try {
@@ -77,7 +77,6 @@ export function* loginSaga() {
         className: "notification-success",
         closeIcon:<CheckCircleFilled className='icon-success'/>
       });
-// Test@1234
     } catch (error) {
         console.log(error.response.data.message );
       yield put({type: 'UPDATE_FAILED', payload: { error: error.response.data.message }});
@@ -128,6 +127,6 @@ export function* watchUser() {
       fork(loginSaga),
       fork(updatesaga),
       fork(resetsaga),
-      // fork(refreshSaga),
+      fork(refreshSaga),
     ]);
   }

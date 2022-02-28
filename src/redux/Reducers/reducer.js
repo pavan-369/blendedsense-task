@@ -24,13 +24,12 @@ const reducer = (state = initialState, action) => {
             const newState = { ...state };
             return newState;
         }
-        // case 'REFRESH_SUCCESS': {
-        //     const newState = { ...state };
-        //     // console.log(newState);
-        //     newState.user = payload.user2;
-        //     newState.token = payload.token2;
-        //     return newState;
-        // }
+        case 'REFRESH_SUCCESS': {
+            const newState = { ...state };
+            newState.user = payload.user2;
+            newState.token = payload.token2;
+            return newState;
+        }
         case 'LOGOUT':
             return state=initialState;
         
