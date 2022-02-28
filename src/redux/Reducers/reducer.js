@@ -1,4 +1,4 @@
-const initialState = { user: null, token: null};
+const initialState = { user: null, token: null , projects:null ,arachive:null};
 
 const reducer = (state = initialState, action) => {
     const {type,payload} = action;
@@ -7,18 +7,36 @@ const reducer = (state = initialState, action) => {
             const newState = { ...state };
             newState.user = payload.user;
             newState.token = payload.token;
+            newState.projects = payload.projects;
+            newState.arachive = payload.arachiveProjects ;
             return newState;
         }
         case 'LOGIN_FAILED': {
             const newState = { ...state };
-            // console.log('login failed', payload.error);
-            // alert(payload.error);
             return newState;
         }
+        case 'UPDATE_SUCCESS': {
+            const newState = { ...state };
+            newState.user = {...payload.user1};
+            return newState;
+        }
+        case 'UPDATE_FAILED': {
+            const newState = { ...state };
+            return newState;
+        }
+        // case 'REFRESH_SUCCESS': {
+        //     const newState = { ...state };
+        //     // console.log(newState);
+        //     newState.user = payload.user2;
+        //     newState.token = payload.token2;
+        //     return newState;
+        // }
         case 'LOGOUT':
             return state=initialState;
+        
         default:
-            return state=initialState;
+            const newState = { ...state };
+            return state=newState;
     }
 }
 export default reducer;

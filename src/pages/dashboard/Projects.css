@@ -1,0 +1,73 @@
+.projects-top{
+    padding-bottom: 15px;
+}
+.projects-search-input{
+    height: 40px;
+    width: 351px;
+    border: none;
+    border-radius: 6px;
+    margin: 0px;
+}
+.projects-search-icon{
+    color: rgba(0, 0, 0, 0.54);
+ font-size: 20px;
+}
+.ant-input-affix-wrapper:focus{
+    border: none;
+}
+.projects-select{
+    margin-left: 25px;   
+    width: 226px !important;
+}
+.ant-select-selector{
+    height: 40px !important;
+    border: none !important;
+    border-radius: 6px !important; 
+    text-align: left !important;
+    position: absolute;
+    top:5px;
+}
+.ant-select-arrow{
+    position: absolute;
+    top: 25px;
+}
+.ant-select-selection-item{
+    line-height: 40px !important;
+    padding-right: 0px !important;
+}
+.ant-select-selection-search-input{
+    width: 226px;
+}
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: transparent;
+    height: 82vh;
+    overflow: auto;
+    padding-top: 0px !important;
+  }
+  
+  .flex-container > div {
+    background-color: #f1f1f1;
+    height: 200px;
+    margin: 0px 10px 32px 13px;
+    background-color: #D8D8D8;
+    text-align: center;
+    box-shadow: 0 2px 4px 0 #c3c3c3;
+  }
+  .ant-card-body{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 64px;
+      padding: 0px;
+      background-color: white;
+      text-transform: capitalize;
+      font-weight: bold;
+  }
+  .ant-card-bordered {
+      border: none;
+  }
+  .blank{
+      display: none;
+  }

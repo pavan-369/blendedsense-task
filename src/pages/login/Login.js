@@ -18,7 +18,7 @@ import 'react-toastify/dist/ReactToastify.css'
 
 const Login = () => {
 
-    let Navigate = useNavigate();
+    const Navigate = useNavigate();
     const data = useSelector(state => state.user)
     const [isModalVisible, setIsModalVisible] = useState(false);
     const showModal = () => {setIsModalVisible(true);};
@@ -31,14 +31,11 @@ const Login = () => {
     setCredentials({...credentials, [e.target.name] : e.target.value})
   }
 
-    async function submitHandler(e) {
-      console.log(credentials);
-      dispatch(login(credentials));
-      console.log("login",data);
-          if(data!== null){
-              Navigate("/dashboard");
-              console.log("login-data",data)
-          }
+     function submitHandler(e) {
+      dispatch(login({ credentials, Navigate }));
+          // if(data!== null){
+          //   Navigate("/dashboard");   
+          // }
         }
 
   return <div className={isModalVisible ? 'login1': "login"}>
@@ -77,8 +74,8 @@ const Login = () => {
                      onChange={changeHandler} 
                      value={credentials.password} /></Form.Item>     </div>   
             <Button className="login-button" type="primary" htmlType="submit">Login with Email</Button>
-            <div className="forgotten" onClick={showModal} ><a>Forgot Password?</a></div>
-            <div className="signup"><p>Need an accout?<a> Sign Up</a></p></div>
+            <div className="forgotten" onClick={showModal} ><a className='login-forgot' >Forgot Password?</a></div>
+            <div className="signup"><p>Need an accout?<a className='login-signup'> Sign Up</a></p></div>
 
         </Form>
         <ToastContainer autoClose={2000} />

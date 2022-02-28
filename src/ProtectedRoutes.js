@@ -3,8 +3,9 @@ import {useSelector} from 'react-redux';
 
 const ProtectedRoutes = () =>{
     const isLogged = useSelector(state => state.user)
-
-    return isLogged ? <Outlet /> : <Navigate to ="/" />;
+    const token = localStorage.getItem("Token")
+    // console.log(token);
+    return token? <Outlet /> : <Navigate to ="/" />;
 };
 
 export default ProtectedRoutes;

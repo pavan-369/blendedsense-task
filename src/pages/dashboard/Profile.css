@@ -1,0 +1,242 @@
+.profile,.edit-profile{
+    background-color: white;
+    min-height: 80vh;
+    padding: 20px;
+    border-radius: 16px;
+    font-size: 14px;
+    box-shadow: 0 2px 4px 0 #c3c3c3, 0 2px 4px 0 #c3c3c3;
+}
+.profile1{
+    display: none;
+}
+.profile-edit{
+    display: flex;
+    justify-content: space-between;
+}
+.profile-heading , .profile-ha-heading , .profile-bio-heading{ 
+    font-weight: bold;
+    letter-spacing: -0.28px;
+    color: #565682;
+}
+.profile-pic{
+    border-radius: 24px;
+}
+.profile-contact, .profile-segment ,.profile-social{
+    font-size: 16px;
+    text-align: left;
+    margin: 5px;
+    color: black;
+}
+.profile-devider{
+    border-color: rgba(0, 0, 0, 0.12);
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 10px;
+}
+.profile-contact-data,.profile-socail-data{
+    text-align: left;
+}
+.profile-phone , .profile-email , .profile-website ,.profile-calender, 
+.profile-location,.profile-instagram, .profile-facebook,.profile-slack{
+    display: flex;
+    flex-direction: row;
+}
+.profile-instagram, .profile-facebook,.profile-slack{
+    height: 32px;
+}
+.profile-phone-logo , .profile-email-logo, .profile-website-logo ,
+.profile-calender-logo ,.profile-location-logo,.profile-instagram-logo,
+.profile-facebook-logo,.profile-slack-logo{
+    margin-top: 3px;
+    margin-right: 15px;
+}
+.profile-website-data{
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}
+.profile-segment-data{
+    background-color: rgb(229, 231 , 250);
+    color: #7163ED;
+    text-align: left;
+    padding-left: 10px;
+    width: 93px;
+    line-height: 32px;
+    border-radius: 4px;
+}
+.profile-instagram-url, .profile-facebook-url, .profile-slack-url{
+    color: black;
+}
+/* profile-pic */
+.profile-pic{
+    display: flex;
+    justify-content: center;
+}
+.profilepic {
+    position: relative;
+    width: 96px;
+    height: 96px;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+  
+  .profilepic:hover .profilepic__content {
+    opacity: 1;
+  }  
+  .profilepic__image {
+    object-fit:cover;
+    opacity: 1;
+  }
+  
+  .profilepic__content {
+    position: absolute;
+    height: 48px;
+    top: 48px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+    cursor: pointer;
+    background-color: #D8D8D8;
+  }
+  
+  .profilepic__icon {
+    color: black;
+    width: 18px !important;
+    height: 18px !important;
+  }  
+  .profilepic__text {
+    font-size: 14px;
+    width: 50%;
+    text-align: center;
+  }
+  .profile-name{
+      font-size: 18px;
+  }
+/* ha */
+.profile-ha{
+    height: 86px;
+    margin-left:20px ;
+    text-align: left;
+    background-color: white;
+    padding: 20px;
+    border-radius: 16px;
+    font-size: 14px;
+    box-shadow: 0 2px 4px 0 #c3c3c3, 0 2px 4px 0 #c3c3c3;
+}
+.profile-bio{
+    height: 200px;
+    margin-left:20px ;
+    margin-bottom: 20px;
+    text-align: left;
+    background-color: white;
+    padding: 20px;
+    border-radius: 16px;
+    font-size: 14px;
+    box-shadow: 0 2px 4px 0 #c3c3c3, 0 2px 4px 0 #c3c3c3;
+}
+/* edit-profile */
+.profile-edit-cancel{
+    margin-right: 15px;
+    font-size: 16px;
+    color: black;
+}
+.profile-edit-cancel:hover{
+    background-color: #f6f6f6;
+    color: black;
+    padding: 7px;
+    margin-right:8px;
+    border-radius: 5px;
+}
+.profile-edit-save{
+    font-size: 16px;
+    border: none;
+    color: rgb(70, 186, 253);
+    width: 33px;
+    padding: 0px;
+}
+.profile-edit-save:hover{
+    background-color: #f6f6f6 ;
+    /* padding: 7px 0px; */
+    border-radius: 14px;
+    color: rgb(70, 186, 253);
+}
+.profile-firstName , .profile-lastName{
+    margin-top: 0px;
+    margin-bottom: 14px;
+}
+.profile-lastName{
+    margin-bottom: 35px;
+}
+.profile-number ,.profile-edit-email , .profile-edit-website ,.profile-edit-calendly,
+.profile-edit-location, .profile-edit-instagram ,.profile-edit-facebook,.profile-edit-slack{
+    margin-bottom: 10px;
+}
+.profile-firstName .ant-form-item-label ,
+.profile-lastName .ant-form-item-label,
+.profile-number .ant-form-item-label,
+.profile-edit-email .ant-form-item-label,
+.profile-edit-website .ant-form-item-label,
+.profile-edit-calendly .ant-form-item-label,
+.profile-edit-location .ant-form-item-label,
+.profile-edit-instagram .ant-form-item-label,
+.profile-edit-facebook .ant-form-item-label,
+.profile-edit-slack .ant-form-item-label
+{
+    top: 11px;
+    left: 10px;
+    padding: 0 5px !important;
+    z-index: 1;
+    background-color: white;
+    width: fit-content;
+}
+.profile-firstName .ant-form-item-label > label,
+.profile-lastName .ant-form-item-label > label,
+.profile-number .ant-form-item-label > label,
+.profile-edit-email .ant-form-item-label > label,
+.profile-edit-website .ant-form-item-label > label,
+.profile-edit-calendly .ant-form-item-label >label,
+.profile-edit-location .ant-form-item-label >label,
+.profile-edit-instagram .ant-form-item-label >label,
+.profile-edit-facebook .ant-form-item-label >label,
+.profile-edit-slack .ant-form-item-label >label
+{
+    height: 14px !important;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.65);
+}
+.profile-firstName-input ,.profile-lastName-input ,.profile-number-input, .profile-email-input ,.profile-website-input,
+.profile-calendly-input ,.profile-location-input ,.profile-instagram-input, .profile-facebook-input ,.profile-slack-input,
+.profile-bio-input{
+    border-radius: 4px;
+    border:1px solid  rgba(0, 0, 0, 0.35);
+    font-weight: normal !important; 
+}
+.profile-bio-input{
+height: fit-content !important;
+border-top: none;
+border-right: none;
+border-left: none;
+background-color: rgba(0, 0, 0, 0.06);
+}
+/* .profile-bio-subheading{
+    margin-bottom: 0px;
+} */
+.profile-bio-description{
+    /* margin-top: 20px; */
+    font-size: 16px;
+}
+.profile-slack-input{
+    margin-left: 0px !important;
+}
+.profile-phone-logo-edit , .profile-email-logo-edit , .profile-website-logo-edit,.profile-facebook-logo-edit,
+.profile-calendly-logo-edit , .profile-location-logo-edit ,.profile-instagram-logo-edit ,.profile-slack-logo-edit{
+    display: flex;
+    align-items: center;
+}
+

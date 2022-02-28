@@ -1,23 +1,14 @@
 import React, { useState } from 'react';
-import { Modal, Button, Form, Input } from 'antd';
+import { Button, Form, Input } from 'antd';
 
 const Forgot = ({setIsModalVisible}) => {
     const [forgot, setForgot] = useState({email:""})
-    // const dispatch = useDispatch();
-  
-    // async function submitHandler() {
-    //   console.log(forgot);
-    //   dispatch(forgotAction(forgot));
-    //   setIsModalVisible(false);
-    // }
   
   const changeHandler = e => {
       setForgot({...forgot, [e.target.name] : e.target.value})
   } 
   return <div>
-      <Form
-    //   onFinish={submitHandler}
-      >
+      <Form>
       <p className="text1">RECOVER PASSWORD</p>
       <p className='text2'>Enter the email address associated with your account.</p>
       <Form.Item

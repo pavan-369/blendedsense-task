@@ -2,60 +2,50 @@
   position:relative;
   text-align: center;
   margin: 0px !important;
-}
-.ant-notification-notice-icon-error,.ant-notification-notice-icon-success{
-  display: none !important;
-}
-.notification-success{
-  width: fit-content !important;
-  line-height: 45px !important;
-  border-radius: 7.5px !important;
-  padding-left: 0px !important;
-  background-color: green !important;
-}
-.notification-failure{
-  line-height: 45px !important;
-  border-radius: 7.5px !important;
-  padding-left: 0px !important;
-  background-color: red !important;
-}
-.ant-notification-notice-close{
-  color: white !important;
-}
-.icon-close ,.icon-success{
-  font-size: 20px;
-}
-.ant-notification-notice-message{
-  margin-left: 30px !important;
-  margin-right:20px !important;
-  color: white !important;
-  font-size: 12.25px !important;
-  line-height: 38px !important;
-}
-.Dashboard,.edit{
-  height: 80vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-/* 
-.welcome1{
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  min-height: 700px !important;
+  font-family: "Lato";
 }
-.login{
-  background-image: linear-gradient(to bottom right, #FFCE00, #FE4880);
-  padding: 50px;
-  width: 300px;
-  border: 1px solid black;
-  border-radius: 25px;
-  z-index: 1;
-  position: relative;
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v22/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v22/S6uyw4BMUTPHjx4wXg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v22/S6u9w4BMUTPHh6UVSwaPGR_p.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v22/S6u9w4BMUTPHh6UVSwiPGQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
 .welcome,.editdetails{
-  background-image: linear-gradient(to bottom right, #FFCE00, #FE4880);
+  background-color: white;
   padding: 30px;
   width: 50vh;
   border: 1px solid black;
@@ -96,7 +86,7 @@ button{
 .site-page-header-ghost-wrapper {
   padding: 2vh;
   height: 10vh;
-  background-image: linear-gradient(to bottom right, #FFCE00, #FE4880);
+  background-color: white;
 }
 .address{
   text-align: left;
@@ -126,4 +116,4 @@ button{
 }
 #slackId{
   margin-left: 10px;
-} */
+} 
