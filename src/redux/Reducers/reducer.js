@@ -1,4 +1,4 @@
-const initialState = { user: null, token: null};
+const initialState = { user: null, token: null , projects:null ,arachive:null};
 
 const reducer = (state = initialState, action) => {
     const {type,payload} = action;
@@ -7,6 +7,8 @@ const reducer = (state = initialState, action) => {
             const newState = { ...state };
             newState.user = payload.user;
             newState.token = payload.token;
+            newState.projects = payload.projects;
+            newState.arachive = payload.arachiveProjects ;
             return newState;
         }
         case 'LOGIN_FAILED': {
@@ -22,6 +24,13 @@ const reducer = (state = initialState, action) => {
             const newState = { ...state };
             return newState;
         }
+        // case 'REFRESH_SUCCESS': {
+        //     const newState = { ...state };
+        //     // console.log(newState);
+        //     newState.user = payload.user2;
+        //     newState.token = payload.token2;
+        //     return newState;
+        // }
         case 'LOGOUT':
             return state=initialState;
         

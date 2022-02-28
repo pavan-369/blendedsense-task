@@ -5,6 +5,8 @@ import {useSelector} from 'react-redux';
 import { logout } from '../../redux/Actions/action';
 import { Menu, Dropdown } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
+import { BrowserRouter, Routes, Route, Link, NavLink } from "react-router-dom";
+
 
 
 function Navbar() {
@@ -28,7 +30,8 @@ const menu = (
       </a>
     </Menu.Item>
     <Menu.Item key="1">
-      <a href="https://www.aliyun.com">Edit profile</a>
+      <Link to="/dashboard/profile">
+      <a>Edit profile</a></Link>
     </Menu.Item>
     <Menu.Item key="2">
       <a onClick={submitHandler}>Log out</a>

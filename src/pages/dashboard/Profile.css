@@ -1,5 +1,6 @@
 .profile,.edit-profile{
     background-color: white;
+    min-height: 80vh;
     padding: 20px;
     border-radius: 16px;
     font-size: 14px;
@@ -129,6 +130,7 @@
     box-shadow: 0 2px 4px 0 #c3c3c3, 0 2px 4px 0 #c3c3c3;
 }
 .profile-bio{
+    height: 200px;
     margin-left:20px ;
     margin-bottom: 20px;
     text-align: left;
@@ -209,10 +211,25 @@
     color: rgba(0, 0, 0, 0.65);
 }
 .profile-firstName-input ,.profile-lastName-input ,.profile-number-input, .profile-email-input ,.profile-website-input,
-.profile-calendly-input ,.profile-location-input ,.profile-instagram-input, .profile-facebook-input ,.profile-slack-input{
+.profile-calendly-input ,.profile-location-input ,.profile-instagram-input, .profile-facebook-input ,.profile-slack-input,
+.profile-bio-input{
     border-radius: 4px;
     border:1px solid  rgba(0, 0, 0, 0.35);
     font-weight: normal !important; 
+}
+.profile-bio-input{
+height: fit-content !important;
+border-top: none;
+border-right: none;
+border-left: none;
+background-color: rgba(0, 0, 0, 0.06);
+}
+/* .profile-bio-subheading{
+    margin-bottom: 0px;
+} */
+.profile-bio-description{
+    /* margin-top: 20px; */
+    font-size: 16px;
 }
 .profile-slack-input{
     margin-left: 0px !important;

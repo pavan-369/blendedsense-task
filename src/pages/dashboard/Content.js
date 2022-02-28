@@ -1,15 +1,24 @@
 import React, { useState } from 'react';
 import { Modal, Button, Form, Input, Divider, Switch ,Table} from 'antd';
 import { Footer } from 'antd/lib/layout/layout';
+import {useDispatch, useSelector} from 'react-redux';
+import { reset } from '../../redux/Actions/action';
+
 
 const Content = () => {
   const { Column} = Table;
-
-    const [credentials, setCredentials] = useState({currentPassword:"", newPassword:""})
+  let dispatch = useDispatch();
+  let token=useSelector(state=>state.token);
+    const [credentials, setCredentials] = useState({currentPassword:"",password:"",confirmPassword:""})
 
     const changeHandler = e => {
         setCredentials({...credentials, [e.target.name] : e.target.value})
       }
+
+      function submitHandler(e){
+        dispatch(reset({credentials,token}));
+        console.log(credentials);
+    }
 
       const data = [
         {
@@ -37,10 +46,10 @@ const Content = () => {
         <p className='password-heading'>Password</p>
 
         <Form layout="vertical" className="content-form" 
-        // onFinish={submitHandler}
+        onFinish={submitHandler}
         >
         <Form.Item
-               name="password"
+               name="curentPassword"
                label="Current Password *"
                required={false}
                rules={[{ required: true, message: 'Please provide your password' }]}
@@ -54,7 +63,7 @@ const Content = () => {
                      value={credentials.currentPassword} /></Form.Item>
         <Form.Item
                  label="New Password * "
-                  name="New password"
+                  name="password"
                   required={false}
                   rules={[{ required: true, message: 'Please input your password!' }]}
                 >
@@ -62,12 +71,12 @@ const Content = () => {
                 <Input.Password className="content-passowrd-input" 
                 iconRender={visible => (visible=false )}
                         type="password" 
-                        name="newPassword"
+                        name="password"
                         id="pwd2"  
                         onChange={changeHandler} 
-                        value={credentials.newPassword} /></Form.Item>
+                        value={credentials.password} /></Form.Item>
         <Form.Item
-                 name="confirm"
+                 name="confirmPassword"
                  label="Confirm New Password *"
                  required={false}
                  dependencies={['password']}
@@ -88,8 +97,11 @@ const Content = () => {
                  ]}
                >
                  <Input.Password
+                 name='confirmPassword'
                  iconRender={visible => (visible =false )}
-                 className="content-passowrd-input"/>
+                 className="content-passowrd-input"
+                 onChange={changeHandler} 
+                 value={credentials.confirmPassword}/>
                </Form.Item>
                <Button type='primary' htmlType='submit' className='content-button'>Change Password</Button>
         </Form>

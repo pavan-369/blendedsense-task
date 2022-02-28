@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Button, Form, Input } from 'antd';
+import { Button, Form, Input } from 'antd';
 
 const Forgot = ({setIsModalVisible}) => {
     const [forgot, setForgot] = useState({email:""})

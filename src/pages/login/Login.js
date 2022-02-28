@@ -18,7 +18,7 @@ import 'react-toastify/dist/ReactToastify.css'
 
 const Login = () => {
 
-    let Navigate = useNavigate();
+    const Navigate = useNavigate();
     const data = useSelector(state => state.user)
     const [isModalVisible, setIsModalVisible] = useState(false);
     const showModal = () => {setIsModalVisible(true);};
@@ -31,11 +31,11 @@ const Login = () => {
     setCredentials({...credentials, [e.target.name] : e.target.value})
   }
 
-    async function submitHandler(e) {
-      await dispatch(login(credentials));
-          if(data!== null){
-            Navigate("/dashboard");   
-          }
+     function submitHandler(e) {
+      dispatch(login({ credentials, Navigate }));
+          // if(data!== null){
+          //   Navigate("/dashboard");   
+          // }
         }
 
   return <div className={isModalVisible ? 'login1': "login"}>

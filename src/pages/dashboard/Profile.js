@@ -8,7 +8,8 @@ import { Col, Divider, Row ,Form ,Input, Button} from 'antd';
 import { update } from '../../redux/Actions/action';
 
 function Profile() {
-    let data=useSelector(state => state.user);
+    const { TextArea } = Input;
+    let data=useSelector(state => state.user); 
     let token=useSelector(state=>state.token);
     let Navigate = useNavigate();
     let dispatch = useDispatch();
@@ -29,12 +30,14 @@ function Profile() {
         slackId:data.profile.slackId,
         instagramUrl:data.profile.instagramUrl,
         calendly:data.calendly,
-        zip:data.address.zip
+        zip:data.address.zip,
+        bio:data.bio
     })
 
     const [style, setStyle] = useState("profile");
     const [styleEdit, setStyleEdit] = useState("profile1");
     const [stylebio, setStylebio] = useState("profile-bio");
+    const [stylebioEdit ,setStylebioEdit] = useState("profile1")
 
     const changeHandler = e => {
         setEdits({...edits, [e.target.name] : e.target.value})
@@ -44,22 +47,31 @@ function Profile() {
         e.preventDefault();
         setStyle("profile1");
         setStyleEdit("edit-profile")
-        console.log(edits)
     }
     function submitBioHandler(e){
         e.preventDefault();
         setStylebio("profile1");
-        console.log(edits)
+        setStylebioEdit("profile-bio")
     }
     function cancelHandler(e){
         e.preventDefault();
         setStyle("profile");
         setStyleEdit("profile1")
     }
+    function cancelBioHandler(e){
+        e.preventDefault();
+        setStylebio("profile-bio");
+        setStylebioEdit("profile1")
+    }
     function updateHandler(e){
         dispatch(update({edits,token}));
         setStyle("profile");
         setStyleEdit("profile1")
+    }
+    function updateBioHandler(e){
+        dispatch(update({edits,token}));
+        setStylebio("profile-bio");
+        setStylebioEdit("profile1")
     }
     
         return (
@@ -300,8 +312,35 @@ function Profile() {
             <p className='profile-heading'>BIO</p><EditOutlined className='editprofile' onClick={submitBioHandler}/>
             </div>
                 <p className='profile-bio-subheading'>Write a little bit about yourself here for others to see.</p>
-                <p className='profile-bio-subheading'>{data.bio}</p>
+                <p className='profile-bio-description'>{data.bio}</p>
             </div>
+
+            <Form 
+            onFinish={updateBioHandler}
+            initialValues={{
+                bio:edits.bio
+              }}
+            className={stylebioEdit}>
+            <div className='profile-edit'>
+            <p className='profile-heading'>EDIT BIO</p>     
+            <div className='editprofile' >       
+            <a className="profile-edit-cancel" onClick={cancelBioHandler}>Cancel</a>
+                <Button className="profile-edit-save" htmlType='submit' >Save</Button>
+            </div></div> 
+
+            <p className='profile-bio-subheading'>Write a little bit about yourself here for others to see.</p>
+            <Form.Item
+            className='profile-edit-sbio'
+            name="bio"
+            required={false}
+            rules={[{ required: true, message: 'Please provide your Last Name' }]}>
+                <TextArea rows={3} className="profile-bio-input" 
+                     type="text" 
+                     name="bio"  
+                     onChange={changeHandler} 
+                     value={edits.bio} />
+            </Form.Item>
+            </Form>
 
             <div className='profile-ha'>
                 <p className='profile-ha-heading'>HANDBOOKS & AGREEMENTS</p>
